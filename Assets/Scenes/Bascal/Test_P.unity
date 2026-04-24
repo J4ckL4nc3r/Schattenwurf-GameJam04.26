@@ -149,7 +149,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapTilingBehavior
   tileSize: 1
-  tilePrefabs: []
+  tilePrefabs:
+  - {fileID: 919132149155446097, guid: 3b24eb0982f738546afc9d7856849150, type: 3}
+  - {fileID: 919132149155446097, guid: bc97d62e7a1fcb241b8440fed83625db, type: 3}
+  - {fileID: 919132149155446097, guid: c09c60b2176b2c443a14648da3c9f681, type: 3}
+  - {fileID: 919132149155446097, guid: 9380306e9eff7b348b4548b462e5c507, type: 3}
 --- !u!4 &1213657616
 Transform:
   m_ObjectHideFlags: 0
