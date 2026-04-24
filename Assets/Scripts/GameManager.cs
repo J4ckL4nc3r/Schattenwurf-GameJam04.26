@@ -19,11 +19,16 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public SaveFile saveFile;
+    [SerializeField]
+    private bool UseSaveFileSystem = false;
 
     private void Start()
     {
-        Load();
-        LoadSavedSettings();
+        if (UseSaveFileSystem)
+        {
+            Load();
+            LoadSavedSettings();
+        }
     }
     private void LoadSavedSettings()
     {
@@ -35,22 +40,28 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
-        var filePath = Application.persistentDataPath + "/savefiles.txt";
-        var data = JsonUtility.ToJson(saveFile);
-
-        using (StreamWriter writer = File.CreateText(filePath))
+        if (UseSaveFileSystem)
         {
-            writer.Write(data);
+            var filePath = Application.persistentDataPath + "/savefiles.txt";
+            var data = JsonUtility.ToJson(saveFile);
+
+            using (StreamWriter writer = File.CreateText(filePath))
+            {
+                writer.Write(data);
+            }
         }
     }
     public void Load()
     {
-        var filePath = Application.persistentDataPath + "/savefiles.txt";
-
-        using (StreamReader reader = File.OpenText(filePath))
+        if (UseSaveFileSystem)
         {
-            var data = reader.ReadToEnd();
-            JsonUtility.FromJsonOverwrite(data, saveFile);
+            var filePath = Application.persistentDataPath + "/savefiles.txt";
+
+            using (StreamReader reader = File.OpenText(filePath))
+            {
+                var data = reader.ReadToEnd();
+                JsonUtility.FromJsonOverwrite(data, saveFile);
+            }
         }
     }
 }
