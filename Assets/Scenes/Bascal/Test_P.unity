@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1213657616}
   - component: {fileID: 1213657615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MapBaseObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de8370e73311534596a6aab31014660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapTilingBehavior
-  tileSize: 1
+  tileSize: 30
   tilePrefabs:
-  - {fileID: 919132149155446097, guid: 3b24eb0982f738546afc9d7856849150, type: 3}
-  - {fileID: 919132149155446097, guid: bc97d62e7a1fcb241b8440fed83625db, type: 3}
-  - {fileID: 919132149155446097, guid: c09c60b2176b2c443a14648da3c9f681, type: 3}
-  - {fileID: 919132149155446097, guid: 9380306e9eff7b348b4548b462e5c507, type: 3}
+  - {fileID: 7296640168831751253, guid: 793634b10646c3d45bdd2187f5b9e040, type: 3}
+  - {fileID: 7310511669765803668, guid: 116a9521968edef44bf064e92545ab38, type: 3}
+  - {fileID: 4654260026212934114, guid: 66cb29aa1a1592246b708077dc8df2be, type: 3}
+  - {fileID: 6994890503091570697, guid: 24c562e471cbc244991d8bc0aa8fc6fc, type: 3}
 --- !u!4 &1213657616
 Transform:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 1213657614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.30624, y: -11.19418, z: 0}
+  m_LocalPosition: {x: 2.30624, y: -22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -182,29 +182,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2726183228248195211, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_Size.x
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2726183228248195211, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_Size.y
-      value: 2.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2726183228248195211, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: jumpForceMultiplyer
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5755709967076685253, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5755709967076685253, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_UseAutoMass
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5968877971184888243, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_LocalPosition.x
