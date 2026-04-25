@@ -45,14 +45,15 @@ public class PlayerControli : MonoBehaviour
 
     private void InputCheck()
     {
+
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
+            if (grounded) rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
             sR.flipX = true;
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
+            if (grounded) rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
             sR.flipX = false;
         }
     }

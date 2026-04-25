@@ -134,7 +134,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7860347257110401121}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 1.5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -150,9 +150,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &7563707145020161214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -186,12 +186,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49563f7c0344b646b973a40a6e43602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 20
-  sprintSpeed: 20
+  normalSpeed: 15
+  sprintSpeed: 15
   maxJumps: 1
-  jumpForceMultiplyer: 5
+  jumpForceMultiplyer: 10
   groundCheckOrigin: {fileID: 2856794289013171758}
-  groundCheckLength: 0.4
+  groundCheckLength: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 256

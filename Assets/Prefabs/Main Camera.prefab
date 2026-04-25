@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollowBehavior
   _player: {fileID: 0}
   dumping: 2
-  offset: {x: 5, y: 1}
+  offset: {x: 5, y: 2.5}
   hasLimit: 0
   leftLimit: 0
   rightLimit: 0
