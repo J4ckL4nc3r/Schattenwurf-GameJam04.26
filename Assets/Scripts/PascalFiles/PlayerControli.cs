@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerControli : MonoBehaviour
 {
-    private Rigidbody2D rB;
+    private Rigidbody rB;
     private SpriteRenderer sR;
 
     private float speed = 1f;
@@ -15,12 +15,12 @@ public class PlayerControli : MonoBehaviour
     [SerializeField] private float groundCheckLength;
     [SerializeField] private LayerMask groundLayer;
 
-    private bool grounded = false;
+    [SerializeField] private bool grounded = false;
     private int jumpsLeft = 2;
 
     private void Start()
     {
-        rB = GetComponent<Rigidbody2D>();
+        rB = GetComponent<Rigidbody>();
         sR = GetComponent<SpriteRenderer>();
         speed = normalSpeed;
     }
@@ -36,7 +36,7 @@ public class PlayerControli : MonoBehaviour
     private void GroundCheck()
     {
         grounded = false;
-        if (Physics2D.BoxCast(groundCheckOrigin.transform.position, new Vector2(1,0.1f), 0, Vector2.down, groundCheckLength, groundLayer))
+        if (Physics.Raycast(groundCheckOrigin.transform.position, Vector2.down, groundCheckLength, groundLayer))
         {
             grounded = true;
             jumpsLeft = maxJumps;
@@ -69,7 +69,7 @@ public class PlayerControli : MonoBehaviour
     public void Jump()
     {
         Vector2 force = Vector2.up * jumpForceMultiplyer;
-        rB.AddForce(force, ForceMode2D.Impulse);
+        rB.AddForce(force, ForceMode.Impulse);
     }
 
     public void SprintCheck()
