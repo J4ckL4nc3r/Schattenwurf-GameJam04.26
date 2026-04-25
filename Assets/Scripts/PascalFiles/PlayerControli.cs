@@ -10,6 +10,7 @@ public class PlayerControli : MonoBehaviour
     [SerializeField] private float sprintSpeed = 4f;
     [SerializeField] private int maxJumps = 2;
     [SerializeField] private float jumpForceMultiplyer = 1.5f;
+    [SerializeField] private float maxBackwardsMovment = 10;
 
     [SerializeField] private GameObject groundCheckOrigin;
     [SerializeField] private float groundCheckLength;
@@ -17,6 +18,7 @@ public class PlayerControli : MonoBehaviour
 
     [SerializeField] private bool grounded = false;
     private int jumpsLeft = 2;
+    private float maxPosX = 0;
 
     private void Start()
     {
@@ -48,6 +50,7 @@ public class PlayerControli : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
+            if (maxPosX - transform.position.x > maxBackwardsMovment) return;
             if (grounded) rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
             sR.flipX = true;
         }
@@ -56,6 +59,7 @@ public class PlayerControli : MonoBehaviour
             if (grounded) rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
             sR.flipX = false;
         }
+        if (transform.position.x > maxPosX) maxPosX = transform.position.x;
     }
 
     public void JumpCheck()
