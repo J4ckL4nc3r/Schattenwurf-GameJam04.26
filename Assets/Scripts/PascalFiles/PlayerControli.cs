@@ -49,7 +49,8 @@ public class PlayerControli : MonoBehaviour
     private void UpdateAnims()
     {
         aM.SetFloat("WalkSpeed", Mathf.Abs(rB.linearVelocity.x) / 10);
-
+        aM.SetBool("airTime", !grounded);
+        aM.SetBool("falling", rB.linearVelocity.y < 0);
     }
 
     private void MaxSpeedClampCheck()
