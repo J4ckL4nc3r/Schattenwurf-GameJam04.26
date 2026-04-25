@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveFile: {fileID: 11400000, guid: 540f539f7202ea84b9ad3f5df9a716ba, type: 2}
+  UseSaveFileSystem: 0
 --- !u!4 &699382698
 Transform:
   m_ObjectHideFlags: 0
@@ -339,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d466e4e7a642242a0d2b6e21e917e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScene: 2
+  startScene: 1
 --- !u!1 &1565837407
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,14 +507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratio: {x: 4, y: 3}
-  forceRatioOnAwake: 1
-  listenForWindowChanges: 1
-  createCameraForLetterBoxRendering: 1
-  findCamerasAutomatically: 1
-  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
-  cameras: []
-  letterBoxCamera: {fileID: 0}
 --- !u!4 &2058137312
 Transform:
   m_ObjectHideFlags: 0
