@@ -117,7 +117,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 345815115213929959, guid: 45606fc469755a74fb4b225a92e4d86c, type: 3}
+  m_Sprite: {fileID: -2255785322637601436, guid: c31f9a2a795e53d4ea7a58abcbb5c70d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,7 +174,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!136 &5004923437450424473
 CapsuleCollider:
@@ -196,9 +196,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.66
-  m_Height: 7.5
+  m_Height: 6
   m_Direction: 0
-  m_Center: {x: 0, y: -0.77, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!114 &3934449290996242947
 MonoBehaviour:
   m_ObjectHideFlags: 0

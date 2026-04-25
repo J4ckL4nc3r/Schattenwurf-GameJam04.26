@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerControli : MonoBehaviour
@@ -24,6 +25,7 @@ public class PlayerControli : MonoBehaviour
 
     [SerializeField] private bool grounded = false;
     [SerializeField] private bool airTime = false;
+    private bool didJump = false;
     private int jumpsLeft = 2;
     private float maxPosX = 0;
 
@@ -51,6 +53,7 @@ public class PlayerControli : MonoBehaviour
         aM.SetFloat("WalkSpeed", Mathf.Abs(rB.linearVelocity.x) / 10);
         aM.SetBool("airTime", !grounded);
         aM.SetBool("falling", rB.linearVelocity.y < 0);
+        aM.SetBool("didJump", didJump);
     }
 
     private void MaxSpeedClampCheck()
@@ -108,6 +111,8 @@ public class PlayerControli : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && (jumpsLeft-1 > 0 || grounded))
         {
             Jump();
+            didJump = true;
+            StartCoroutine(DidJump());
             jumpsLeft--;
         }
     }
@@ -116,6 +121,12 @@ public class PlayerControli : MonoBehaviour
     {
         Vector2 force = Vector2.up * jumpForceMultiplyer;
         rB.AddForce(force, ForceMode.Impulse);
+    }
+
+    IEnumerator DidJump()
+    {
+        yield return new WaitForSeconds(2);
+        didJump = false;
     }
 
     public void SprintCheck()
