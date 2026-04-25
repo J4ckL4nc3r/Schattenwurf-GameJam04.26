@@ -156,6 +156,9 @@ MonoBehaviour:
   tileSize: 30
   tilePrefabs:
   - {fileID: 7296640168831751253, guid: 793634b10646c3d45bdd2187f5b9e040, type: 3}
+  - {fileID: 7310511669765803668, guid: 116a9521968edef44bf064e92545ab38, type: 3}
+  - {fileID: 4654260026212934114, guid: 66cb29aa1a1592246b708077dc8df2be, type: 3}
+  - {fileID: 6994890503091570697, guid: 24c562e471cbc244991d8bc0aa8fc6fc, type: 3}
   player: {fileID: 737569721}
 --- !u!4 &1213657616
 Transform:
@@ -192,6 +195,10 @@ PrefabInstance:
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: sprintSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
+      propertyPath: airTimeCheckLength
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5968877971184888243, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_LocalPosition.x

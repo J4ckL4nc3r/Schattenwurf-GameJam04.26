@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerControli : MonoBehaviour
@@ -12,11 +13,15 @@ public class PlayerControli : MonoBehaviour
     [SerializeField] private float jumpForceMultiplyer = 1.5f;
     [SerializeField] private float maxBackwardsMovment = 10;
 
+    [SerializeField] private float maxSpeed = 20;
+
     [SerializeField] private GameObject groundCheckOrigin;
     [SerializeField] private float groundCheckLength;
+    [SerializeField] private float airTimeCheckLength;
     [SerializeField] private LayerMask groundLayer;
 
     [SerializeField] private bool grounded = false;
+    [SerializeField] private bool airTime = false;
     private int jumpsLeft = 2;
     private float maxPosX = 0;
 
@@ -31,8 +36,17 @@ public class PlayerControli : MonoBehaviour
     {
         SprintCheck();
         InputCheck();
+        MaxSpeedClampCheck();
         GroundCheck();
         JumpCheck();
+    }
+
+    private void MaxSpeedClampCheck()
+    {
+        if (rB.linearVelocity.x > maxSpeed)
+        {
+            rB.linearVelocity = new Vector3(Mathf.Clamp(rB.linearVelocity.x, 0, maxSpeed), rB.linearVelocity.y, rB.linearVelocity.z);
+        }
     }
 
     private void GroundCheck()
@@ -43,6 +57,11 @@ public class PlayerControli : MonoBehaviour
             grounded = true;
             jumpsLeft = maxJumps;
         }
+        airTime = false;
+        if (Physics.Raycast(groundCheckOrigin.transform.position, Vector2.down, airTimeCheckLength, groundLayer))
+        {
+            airTime = true;
+        }
     }
 
     private void InputCheck()
@@ -51,12 +70,12 @@ public class PlayerControli : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             if (maxPosX - transform.position.x > maxBackwardsMovment) return;
-            if (grounded) rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
+            if (airTime) rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
             sR.flipX = true;
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            if (grounded) rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
+            if (airTime) rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
             sR.flipX = false;
         }
         if (transform.position.x > maxPosX) maxPosX = transform.position.x;

@@ -134,9 +134,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7860347257110401121}
   serializedVersion: 5
-  m_Mass: 1.5
+  m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -186,13 +186,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49563f7c0344b646b973a40a6e43602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 15
-  sprintSpeed: 15
+  normalSpeed: 10
+  sprintSpeed: 10
   maxJumps: 1
   jumpForceMultiplyer: 10
+  maxBackwardsMovment: 10
+  maxSpeed: 10
   groundCheckOrigin: {fileID: 2856794289013171758}
   groundCheckLength: 0.5
+  airTimeCheckLength: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   grounded: 0
+  airTime: 0
