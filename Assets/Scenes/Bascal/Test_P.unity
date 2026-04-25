@@ -162,13 +162,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213657614}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.30624, y: -22, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &1302960944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5968877971184888243, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
@@ -184,15 +184,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: normalSpeed
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: sprintSpeed
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: jumpForceMultiplyer
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5968877971184888243, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,6 +237,14 @@ PrefabInstance:
     - target: {fileID: 7478974633913270948, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_Mass
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478974633913270948, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478974633913270948, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7860347257110401121, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_Name
@@ -303,6 +311,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1302960944}
+    - target: {fileID: 8779891699870399439, guid: c76b00d3ed4247b489eb0cc2be8a52da, type: 3}
+      propertyPath: offset.y
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
