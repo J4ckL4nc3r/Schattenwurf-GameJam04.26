@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1896404723310178440}
   - component: {fileID: 3214743563282830119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Boden_4_leichter_H\xFCgel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Boden 4 leichte H\xFCgel"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9380306e9eff7b348b4548b462e5c507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 9380306e9eff7b348b4548b462e5c507, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -166,7 +174,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 9380306e9eff7b348b4548b462e5c507, type: 3}
 --- !u!4 &6560473595424228598 stripped

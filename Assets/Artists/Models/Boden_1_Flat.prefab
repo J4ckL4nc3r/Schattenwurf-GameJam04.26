@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4113957032053101188}
   - component: {fileID: 5761015177135012816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boden_1_Flat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,6 +150,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boden 1 Flat
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b24eb0982f738546afc9d7856849150, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 3b24eb0982f738546afc9d7856849150, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -182,7 +190,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 3b24eb0982f738546afc9d7856849150, type: 3}
 --- !u!4 &681062935661640939 stripped
