@@ -77,7 +77,7 @@ public class MapTilingBehavior : MonoBehaviour
 
     private void SpawnNewTile(int tileID, int tilePrefabID)
     {
-        GameObject tile = Instantiate(tilePrefabs[tilePrefabID], new Vector3(_curChunkID + (tileID * tileSize), transform.position.y, 0), transform.rotation);
+        GameObject tile = Instantiate(tilePrefabs[tilePrefabID], new Vector3((_curChunkID + tileID) * tileSize, transform.position.y, 0), transform.rotation);
         tile.transform.parent = transform;
         _activeTiles[tileID+2] = tile;
     }
