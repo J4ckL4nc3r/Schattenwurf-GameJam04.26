@@ -5,6 +5,7 @@ public class PlayerControli : MonoBehaviour
 {
     private Rigidbody rB;
     private SpriteRenderer sR;
+    private Animator aM;
 
     private float speed = 1f;
     [SerializeField] private float normalSpeed = 2f;
@@ -14,6 +15,7 @@ public class PlayerControli : MonoBehaviour
     [SerializeField] private float maxBackwardsMovment = 10;
 
     [SerializeField] private float maxSpeed = 20;
+    [SerializeField] private float maxRotAngle = 20;
 
     [SerializeField] private GameObject groundCheckOrigin;
     [SerializeField] private float groundCheckLength;
@@ -29,6 +31,7 @@ public class PlayerControli : MonoBehaviour
     {
         rB = GetComponent<Rigidbody>();
         sR = GetComponent<SpriteRenderer>();
+        aM = GetComponent<Animator>();
         speed = normalSpeed;
     }
 
@@ -37,16 +40,34 @@ public class PlayerControli : MonoBehaviour
         SprintCheck();
         InputCheck();
         MaxSpeedClampCheck();
+        MaxRotAngleCheck();
         GroundCheck();
         JumpCheck();
+        UpdateAnims();
+    }
+
+    private void UpdateAnims()
+    {
+        aM.SetFloat("WalkSpeed", Mathf.Abs(rB.linearVelocity.x) / 10);
+
     }
 
     private void MaxSpeedClampCheck()
     {
-        if (rB.linearVelocity.x > maxSpeed)
+        if (rB.linearVelocity.x > maxSpeed || rB.linearVelocity.x < -maxSpeed)
         {
-            rB.linearVelocity = new Vector3(Mathf.Clamp(rB.linearVelocity.x, 0, maxSpeed), rB.linearVelocity.y, rB.linearVelocity.z);
+            rB.linearVelocity = new Vector3(Mathf.Clamp(rB.linearVelocity.x, -maxSpeed, maxSpeed), rB.linearVelocity.y, rB.linearVelocity.z);
         }
+    }
+    private void MaxRotAngleCheck()
+    {
+        transform.localEulerAngles = new Vector3(0,0, ClampAngle(transform.localEulerAngles.z, -maxRotAngle, maxRotAngle));
+    }
+    float ClampAngle(float angle, float from, float to)
+    {
+        if (angle < 0f) angle = 360 + angle;
+        if (angle > 180f) return Mathf.Max(angle, 360 + from);
+        return Mathf.Min(angle, to);
     }
 
     private void GroundCheck()

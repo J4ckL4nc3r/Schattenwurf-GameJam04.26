@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2856794289013171758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,8 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5968877971184888243}
   - component: {fileID: 3275323026157641255}
+  - component: {fileID: 6965717796454430314}
   - component: {fileID: 7478974633913270948}
-  - component: {fileID: 7563707145020161214}
+  - component: {fileID: 5004923437450424473}
   - component: {fileID: 3934449290996242947}
   m_Layer: 6
   m_Name: Player
@@ -61,8 +62,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.09, y: -0.85, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7050458064859447867}
   m_Father: {fileID: 0}
@@ -116,7 +117,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 5c54e9014a762514591fda2c89deb777, type: 3}
+  m_Sprite: {fileID: 345815115213929959, guid: 45606fc469755a74fb4b225a92e4d86c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,6 +127,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &6965717796454430314
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860347257110401121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79411957bdb00ec4da7174054c1e5d39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &7478974633913270948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,10 +174,10 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 48
   m_CollisionDetection: 2
---- !u!65 &7563707145020161214
-BoxCollider:
+--- !u!136 &5004923437450424473
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -171,9 +194,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.56, y: 2.56, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 1.66
+  m_Height: 7.5
+  m_Direction: 0
+  m_Center: {x: 0, y: -0.77, z: 0}
 --- !u!114 &3934449290996242947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,12 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49563f7c0344b646b973a40a6e43602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 10
-  sprintSpeed: 10
+  normalSpeed: 20
+  sprintSpeed: 20
   maxJumps: 1
   jumpForceMultiplyer: 10
   maxBackwardsMovment: 10
   maxSpeed: 10
+  maxRotAngle: 20
   groundCheckOrigin: {fileID: 2856794289013171758}
   groundCheckLength: 0.5
   airTimeCheckLength: 2

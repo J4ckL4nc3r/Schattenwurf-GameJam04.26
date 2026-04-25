@@ -34,8 +34,6 @@ public class MapTilingBehavior : MonoBehaviour
         if (player == null) return;
 
         _curChunkID = (int)((player.transform.position.x + 15) / tileSize);
-        Debug.Log(player.transform.position.x);
-        Debug.Log(_curChunkID);
         if (_curChunkID > _lastChunkID) _isLeft = false;
         else if (_curChunkID < _lastChunkID) _isLeft = true;
 
