@@ -95,13 +95,19 @@ public class PlayerControli : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             if (maxPosX - transform.position.x > maxBackwardsMovment) return;
-            if (airTime) rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
-            sR.flipX = true;
+            if (airTime)
+            {
+                rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
+                sR.flipX = true;
+            }
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            if (airTime) rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
-            sR.flipX = false;
+            if (airTime)
+            {
+                rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
+                sR.flipX = false;
+            }
         }
         if (transform.position.x > maxPosX) maxPosX = transform.position.x;
     }
