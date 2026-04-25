@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &737569721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7860347257110401121, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
+  m_PrefabInstance: {fileID: 1316116654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213657614
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,9 +156,7 @@ MonoBehaviour:
   tileSize: 30
   tilePrefabs:
   - {fileID: 7296640168831751253, guid: 793634b10646c3d45bdd2187f5b9e040, type: 3}
-  - {fileID: 7310511669765803668, guid: 116a9521968edef44bf064e92545ab38, type: 3}
-  - {fileID: 4654260026212934114, guid: 66cb29aa1a1592246b708077dc8df2be, type: 3}
-  - {fileID: 6994890503091570697, guid: 24c562e471cbc244991d8bc0aa8fc6fc, type: 3}
+  player: {fileID: 737569721}
 --- !u!4 &1213657616
 Transform:
   m_ObjectHideFlags: 0
@@ -184,15 +187,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: normalSpeed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: sprintSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: jumpForceMultiplyer
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5968877971184888243, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,15 +235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478974633913270948, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7478974633913270948, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7478974633913270948, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
+      propertyPath: m_AngularDamping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7860347257110401121, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_Name
@@ -307,14 +302,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8252182651627409659, guid: c76b00d3ed4247b489eb0cc2be8a52da, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252182651627409659, guid: c76b00d3ed4247b489eb0cc2be8a52da, type: 3}
+      propertyPath: field of view
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8779891699870399439, guid: c76b00d3ed4247b489eb0cc2be8a52da, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1302960944}
-    - target: {fileID: 8779891699870399439, guid: c76b00d3ed4247b489eb0cc2be8a52da, type: 3}
-      propertyPath: offset.y
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

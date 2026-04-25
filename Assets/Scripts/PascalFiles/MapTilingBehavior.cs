@@ -7,15 +7,14 @@ public class MapTilingBehavior : MonoBehaviour
 {
     [SerializeField] private float tileSize = 1f;
     [SerializeField] private GameObject[] tilePrefabs;
+    [SerializeField] private GameObject player;
 
     private GameObject[] _activeTiles = new GameObject[5];
-    private GameObject _cam;
     private bool _isLeft;
-    private Vector3 _lastChunkID, _curChunkID;
+    private int _lastChunkID, _curChunkID;
 
     public void Start()
     {
-        _cam = Camera.main.gameObject;
         SpawnDefault();
     }
 
@@ -32,24 +31,53 @@ public class MapTilingBehavior : MonoBehaviour
 
     public void Update()
     {
-        if (_cam == null) return;
+        if (player == null) return;
 
-        _curChunkID = (_cam.transform.position / tileSize);
+        _curChunkID = (int)((player.transform.position.x + 15) / tileSize);
+        Debug.Log(player.transform.position.x);
+        Debug.Log(_curChunkID);
+        if (_curChunkID > _lastChunkID) _isLeft = false;
+        else if (_curChunkID < _lastChunkID) _isLeft = true;
 
-        if (_curChunkID.x > _lastChunkID.x) _isLeft = false;
-        else if (_curChunkID.x < _lastChunkID.x) _isLeft = true;
+        if(_curChunkID != _lastChunkID)
+        {
+            if(!_isLeft)
+            {
+                DeleteLeftTile();
+                SpawnNewTile(2, Random.Range(0, tilePrefabs.Length));
+            }
+            else
+            {
+                DeleteRightTile();
+                SpawnNewTile(-2, Random.Range(0, tilePrefabs.Length));
+            }
+        }
 
         _lastChunkID = _curChunkID;
     }
 
-    private void DeleteOldTile(int tileID)
+    public void DeleteLeftTile()
     {
+        GameObject.Destroy(_activeTiles[0]);
+        _activeTiles[0] = _activeTiles[1];
+        _activeTiles[1] = _activeTiles[2];
+        _activeTiles[2] = _activeTiles[3];
+        _activeTiles[3] = _activeTiles[4];
+
+    }
+    public void DeleteRightTile()
+    {
+        GameObject.Destroy(_activeTiles[4]);
+        _activeTiles[4] = _activeTiles[3];
+        _activeTiles[3] = _activeTiles[2];
+        _activeTiles[2] = _activeTiles[1];
+        _activeTiles[1] = _activeTiles[0];
 
     }
 
     private void SpawnNewTile(int tileID, int tilePrefabID)
     {
-        GameObject tile = Instantiate(tilePrefabs[tilePrefabID], new Vector3(_curChunkID.x + (tileID * tileSize), transform.position.y, 0), transform.rotation);
+        GameObject tile = Instantiate(tilePrefabs[tilePrefabID], new Vector3(_curChunkID + (tileID * tileSize), transform.position.y, 0), transform.rotation);
         tile.transform.parent = transform;
         _activeTiles[tileID+2] = tile;
     }
