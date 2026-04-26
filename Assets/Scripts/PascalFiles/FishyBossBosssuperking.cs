@@ -5,6 +5,7 @@ public class FishyBossBosssuperking : MonoBehaviour
 {
     [SerializeField] int scorePoints = 100;
     [SerializeField] private float changeValue = 0.01f;
+    [SerializeField] private Vector3 speedRotate = new Vector3(1, 1, 1);
 
     public float colorValue = 0;
 
@@ -37,5 +38,7 @@ public class FishyBossBosssuperking : MonoBehaviour
         runtimeMaterial.color = Color.HSVToRGB(colorValue, 1, 1);
 
         colorValue += changeValue;
+
+        transform.Rotate(new Vector3(speedRotate.x,speedRotate.y,speedRotate.z));
     }
 }
