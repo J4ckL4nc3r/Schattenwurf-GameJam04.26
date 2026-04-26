@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 2075034991}
+    - target: {fileID: 8779891699870399439, guid: c76b00d3ed4247b489eb0cc2be8a52da, type: 3}
+      propertyPath: offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1166,6 +1170,10 @@ PrefabInstance:
       propertyPath: walkNormSound
       value: 
       objectReference: {fileID: 8300000, guid: a911b5d41e77b6c4f9e7cbcefc2784b2, type: 3}
+    - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
+      propertyPath: jumpForceMultiplyer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5968877971184888243, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
