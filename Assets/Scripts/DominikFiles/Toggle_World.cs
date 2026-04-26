@@ -6,7 +6,7 @@ public class Toggle_World: MonoBehaviour
     public GameObject Light_World;
     public GameObject Shadow_World;
 
-    private bool isWorldActive = true;
+    public bool isWorldActive = true;
 
     void Update()
     {
