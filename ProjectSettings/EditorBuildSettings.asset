@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 594e4cd876ef81c44a35e43d3131bf8f
   - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 27eec3d9710b237488473adbb74fa940
+  - enabled: 1
     path: Assets/Scenes/MainLevel.unity
     guid: 55694fc591e39be4cadee1f59243f951
   - enabled: 1
-    path: Assets/Scenes/Dominik/Test_D.unity
-    guid: 3842480f01c55eb48857c5a3cc645785
-  - enabled: 1
-    path: Assets/Scenes/Bascal/Test_P.unity
-    guid: 6a631114cf8d03c4f9c40f93f189ee9d
+    path: Assets/Scenes/DeathScene.unity
+    guid: e102e71ddb9c0294bb0591c80ad22b9c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

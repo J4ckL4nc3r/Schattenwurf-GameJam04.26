@@ -5,9 +5,9 @@ public enum MyScenes
 {
     InitScene,
     MainMenu,
+    Credits,
     MainLevel,
-    Test_D,
-    Test_P
+    DeathScene
 }
 public class SceneLoader : MonoBehaviour
 {
