@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerControli : MonoBehaviour
@@ -94,7 +93,7 @@ public class PlayerControli : MonoBehaviour
         if (rB.linearVelocity.x > 0.2 || rB.linearVelocity.x < -0.2)
         {
             if (aS.isPlaying) return;
-            if(tW.isWorldActive)
+            if(!tW.isWorldActive)
             {
                 aS.clip = walkDarkSound;
             }

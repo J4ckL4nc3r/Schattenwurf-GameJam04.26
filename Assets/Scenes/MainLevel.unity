@@ -557,6 +557,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Toggle_World
   Light_World: {fileID: 1720167339}
   Shadow_World: {fileID: 1118258348}
+  darkAthmo:
+  - {fileID: 8300000, guid: 501a1c511cda5014d9b62da3799e921a, type: 3}
+  - {fileID: 8300000, guid: e4672f897f695c942b99e7af67ebca66, type: 3}
+  normAthmo: {fileID: 8300000, guid: 17a0ed9b64bf2b445b1bffb213a9f090, type: 3}
   isWorldActive: 1
 --- !u!82 &2075034993
 AudioSource:

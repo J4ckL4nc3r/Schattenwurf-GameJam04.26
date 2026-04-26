@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Profiling;
 using UnityEngine;
 
 public class UIScoreBehavior : MonoBehaviour
