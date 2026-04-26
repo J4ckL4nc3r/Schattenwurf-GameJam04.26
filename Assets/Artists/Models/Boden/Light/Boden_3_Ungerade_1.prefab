@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 3782043099101545274}
   - component: {fileID: 7598646684877651901}
   - component: {fileID: 6438317201659253984}
+  - component: {fileID: 2070901736190682711}
   m_Layer: 0
   m_Name: Monument_Normal
   m_TagString: Untagged
@@ -959,6 +960,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2070901736190682711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960519341967406464}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.021321926, y: 0.02132193, z: 0.28577092}
+  m_Center: {x: 0.000000004204519, y: -0.000000007787177, z: 0.13288546}
 --- !u!1 &5211673932942796938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2504213563896838150}
   - component: {fileID: 6079180280692817454}
+  - component: {fileID: 6299115146578603437}
   m_Layer: 0
   m_Name: Fish fixed (1)
   m_TagString: Untagged
@@ -1074,10 +1097,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5611096321845436074}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 5.8600006, y: 9.959999, z: 4.4399996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0.70710784, z: -0, w: -0.70710576}
+  m_LocalPosition: {x: 4.2507005, y: 2.61, z: -0.29929957}
+  m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2078676681467694230}
   - {fileID: 6155568655189538550}
@@ -1085,7 +1108,7 @@ Transform:
   - {fileID: 8450787840059888688}
   - {fileID: 4835102290206601318}
   m_Father: {fileID: 5245840684321224676}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &6079180280692817454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,9 +1122,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishyBossBosssuperking
   scorePoints: 100
-  changeValue: 0.01
-  speedRotate: {x: 1, y: 1, z: 1}
+  changeValue: 0.02
+  speedRotate: {x: 2, y: 2, z: 2}
   colorValue: 0
+  runtimeMaterial: {fileID: 2100000, guid: c64383a04a2f0be4882b273755508a37, type: 2}
+--- !u!65 &6299115146578603437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611096321845436074}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.75, y: 2.76, z: 8.81}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5961855458217748609
 GameObject:
   m_ObjectHideFlags: 0

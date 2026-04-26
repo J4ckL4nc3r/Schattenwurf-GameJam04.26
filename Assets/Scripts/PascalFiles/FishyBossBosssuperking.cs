@@ -10,13 +10,11 @@ public class FishyBossBosssuperking : MonoBehaviour
     public float colorValue = 0;
 
     private MeshRenderer[] mRs;
-    private Material runtimeMaterial;
+    [SerializeField] private Material runtimeMaterial;
 
     private void Start()
     {
         mRs = GetComponentsInChildren<MeshRenderer>();
-
-        runtimeMaterial = new Material(Shader.Find("Standard"));
 
         foreach (MeshRenderer mR in mRs)
         {
