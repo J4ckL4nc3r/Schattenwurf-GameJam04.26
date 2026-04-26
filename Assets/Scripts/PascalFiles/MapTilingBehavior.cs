@@ -9,6 +9,8 @@ public class MapTilingBehavior : MonoBehaviour
     [SerializeField] private GameObject[] tilePrefabs;
     [SerializeField] private GameObject player;
 
+    [SerializeField] private GameObject toggleObj;
+
     private GameObject[] _activeTiles = new GameObject[5];
     private bool _isLeft;
     private int _lastChunkID, _curChunkID;
@@ -76,7 +78,7 @@ public class MapTilingBehavior : MonoBehaviour
     private void SpawnNewTile(int tileID, int tilePrefabID)
     {
         GameObject tile = Instantiate(tilePrefabs[tilePrefabID], new Vector3((_curChunkID + tileID) * tileSize, transform.position.y, 0), transform.rotation);
-        tile.transform.parent = transform;
+        tile.transform.parent = toggleObj==null? transform: toggleObj.transform;
         _activeTiles[tileID+2] = tile;
     }
 }
