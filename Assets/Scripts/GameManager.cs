@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool UseSaveFileSystem = false;
 
+    public int tileSelectionID;
+
     private void Start()
     {
         if (UseSaveFileSystem)

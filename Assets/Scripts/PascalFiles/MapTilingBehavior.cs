@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class MapTilingBehavior : MonoBehaviour
 {
-    [SerializeField] private float tileSize = 1f;
+    [SerializeField] private float tileSize = 30f;
     [SerializeField] private GameObject[] tilePrefabs;
     [SerializeField] private GameObject player;
 
     [SerializeField] private GameObject toggleObj;
+    [SerializeField] private MapTilingBehaviorCopy copyScript;
 
     private GameObject[] _activeTiles = new GameObject[5];
     private bool _isLeft;
@@ -28,6 +29,7 @@ public class MapTilingBehavior : MonoBehaviour
                 ?  prefabIndex = 0
                 :  prefabIndex = Random.Range(0, tilePrefabs.Length);
             SpawnNewTile(tileID, prefabIndex);
+            copyScript.SpawnNewTile(tileID, prefabIndex, _curChunkID);
         }
     }
 
@@ -44,12 +46,18 @@ public class MapTilingBehavior : MonoBehaviour
             if(!_isLeft)
             {
                 DeleteLeftTile();
-                SpawnNewTile(2, Random.Range(0, tilePrefabs.Length));
+                copyScript.DeleteLeftTile();
+                int prefabIndex = Random.Range(0, tilePrefabs.Length);
+                SpawnNewTile(2, prefabIndex);
+                copyScript.SpawnNewTile(2, prefabIndex, _curChunkID);
             }
             else
             {
                 DeleteRightTile();
-                SpawnNewTile(-2, Random.Range(0, tilePrefabs.Length));
+                copyScript.DeleteRightTile();
+                int prefabIndex = Random.Range(0, tilePrefabs.Length);
+                SpawnNewTile(-2, prefabIndex);
+                copyScript.SpawnNewTile(-2, prefabIndex, _curChunkID);
             }
         }
 
