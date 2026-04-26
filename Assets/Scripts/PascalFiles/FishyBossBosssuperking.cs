@@ -1,36 +1,41 @@
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class FishyBossBosssuperking : MonoBehaviour
 {
     [SerializeField] int scorePoints = 100;
+    [SerializeField] private float changeValue = 0.01f;
 
-    [SerializeField] private Material material;
+    public float colorValue = 0;
 
-    private float colorValue = 0;
+    private MeshRenderer[] mRs;
+    private Material runtimeMaterial;
 
-    private MeshRenderer mR;
     private void Start()
     {
-        mR = GetComponent<MeshRenderer>();
+        mRs = GetComponentsInChildren<MeshRenderer>();
+
+        runtimeMaterial = new Material(Shader.Find("Standard"));
+
+        foreach (MeshRenderer mR in mRs)
+        {
+            mR.material = runtimeMaterial;
+        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         GameManager.Instance.score += scorePoints;
+        Destroy(gameObject);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-
-
-        if (material == null)
-            return;
-        if (colorValue >= 255)
+        if (colorValue >= 1)
             colorValue = 0;
 
-        List<Material> mat = new List<Material>()
-        mat.Add(material);
-        mR.SetMaterials(mat);
+        runtimeMaterial.color = Color.HSVToRGB(colorValue, 1, 1);
+
+        colorValue += changeValue;
     }
 }
