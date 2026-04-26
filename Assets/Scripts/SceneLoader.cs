@@ -7,6 +7,7 @@ public enum MyScenes
     MainMenu,
     Credits,
     MainLevel,
+    ScoreScene,
     DeathScene
 }
 public class SceneLoader : MonoBehaviour

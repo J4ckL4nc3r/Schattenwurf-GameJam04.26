@@ -35,6 +35,8 @@ public class PlayerControli : MonoBehaviour
         sR = GetComponent<SpriteRenderer>();
         aM = GetComponent<Animator>();
         speed = normalSpeed;
+
+        GameManager.Instance.score = 0;
     }
 
     private void Update()
@@ -109,7 +111,11 @@ public class PlayerControli : MonoBehaviour
                 sR.flipX = false;
             }
         }
-        if (transform.position.x > maxPosX) maxPosX = transform.position.x;
+        if (transform.position.x > maxPosX)
+        {
+            maxPosX = transform.position.x;
+            GameManager.Instance.score++;
+        }
     }
 
     public void JumpCheck()
@@ -133,6 +139,7 @@ public class PlayerControli : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         didJump = false;
+        StopCoroutine(DidJump());
     }
 
     public void SprintCheck()
