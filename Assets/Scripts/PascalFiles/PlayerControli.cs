@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerControli : MonoBehaviour
@@ -7,6 +9,8 @@ public class PlayerControli : MonoBehaviour
     private Rigidbody rB;
     private SpriteRenderer sR;
     private Animator aM;
+    private AudioSource aS;
+    private Toggle_World tW;
 
     private float speed = 1f;
     [SerializeField] private float normalSpeed = 2f;
@@ -23,8 +27,16 @@ public class PlayerControli : MonoBehaviour
     [SerializeField] private float airTimeCheckLength;
     [SerializeField] private LayerMask groundLayer;
 
-    [SerializeField] private bool grounded = false;
-    [SerializeField] private bool airTime = false;
+    [SerializeField] private AudioClip walkDarkSound;
+    [SerializeField] private AudioClip walkNormSound;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip miaoSound;
+
+    private AudioSource jumpSource;
+    private AudioSource miaoSource;
+
+    private bool grounded = false;
+    private bool airTime = false;
     private bool didJump = false;
     private int jumpsLeft = 2;
     private float maxPosX = 0;
@@ -34,6 +46,16 @@ public class PlayerControli : MonoBehaviour
         rB = GetComponent<Rigidbody>();
         sR = GetComponent<SpriteRenderer>();
         aM = GetComponent<Animator>();
+        aS = GetComponent<AudioSource>();
+        tW = GetComponent<Toggle_World>();
+        jumpSource = transform.AddComponent<AudioSource>();
+        jumpSource.loop = false;
+        jumpSource.playOnAwake = false;
+        miaoSource = transform.AddComponent<AudioSource>();
+        miaoSource.clip = miaoSound;
+        miaoSource.loop = false;
+        miaoSource.playOnAwake = false;
+        miaoSource.Stop();
         speed = normalSpeed;
 
         GameManager.Instance.score = 0;
@@ -48,6 +70,11 @@ public class PlayerControli : MonoBehaviour
         GroundCheck();
         JumpCheck();
         UpdateAnims();
+        int rnd = UnityEngine.Random.Range(0, 3500);
+        if (rnd == 0 && !miaoSource.isPlaying)
+        {
+            miaoSource.Play();
+        }
     }
 
     private void UpdateAnims()
@@ -63,6 +90,23 @@ public class PlayerControli : MonoBehaviour
         if (rB.linearVelocity.x > maxSpeed || rB.linearVelocity.x < -maxSpeed)
         {
             rB.linearVelocity = new Vector3(Mathf.Clamp(rB.linearVelocity.x, -maxSpeed, maxSpeed), rB.linearVelocity.y, rB.linearVelocity.z);
+        }
+        if (rB.linearVelocity.x > 0.2 || rB.linearVelocity.x < -0.2)
+        {
+            if (aS.isPlaying) return;
+            if(tW.isWorldActive)
+            {
+                aS.clip = walkDarkSound;
+            }
+            else
+            {
+                aS.clip = walkNormSound;
+            }
+            aS.Play();
+        }
+        else
+        {
+            aS.Stop();
         }
     }
     private void MaxRotAngleCheck()
@@ -126,6 +170,8 @@ public class PlayerControli : MonoBehaviour
             didJump = true;
             StartCoroutine(DidJump());
             jumpsLeft--;
+            jumpSource.clip = jumpSound;
+            jumpSource.Play();
         }
     }
 
