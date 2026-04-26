@@ -1,7 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
+
+    [SerializeField] private TextMeshProUGUI score;
     public void OnPlayButtonClicked()
     {
         SceneLoader.Instance.LoadScene(MyScenes.MainLevel);
@@ -13,6 +16,11 @@ public class MainMenuUI : MonoBehaviour
     public void OnMainMenuButtonClicked()
     {
         SceneLoader.Instance.LoadScene(MyScenes.MainMenu);
+    }
+
+    private void Start()
+    {
+        if (score != null) score.text = "Dein Score: " + GameManager.Instance.score;
     }
 
     public void OnQuitButtonClicked()
