@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 06ee3a3d77c45b94497bfcacb5a534d4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8ad123924b9bc4a4eac20771f83f91ed, type: 2}
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: 06ee3a3d77c45b94497bfcacb5a534d4, type: 3}
       propertyPath: m_Name
       value: Boden 2 Abgrund Textured
@@ -239,6 +239,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 521b33c3ea190c149b65e72402d3401f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 521b33c3ea190c149b65e72402d3401f, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 521b33c3ea190c149b65e72402d3401f, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 521b33c3ea190c149b65e72402d3401f, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: 521b33c3ea190c149b65e72402d3401f, type: 3}
       propertyPath: m_Name
       value: Bridge_Normal

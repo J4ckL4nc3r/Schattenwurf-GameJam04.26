@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e1b159b250377e74b8fc0f19a7864f43, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8ad123924b9bc4a4eac20771f83f91ed, type: 2}
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: e1b159b250377e74b8fc0f19a7864f43, type: 3}
       propertyPath: m_Name
       value: Boden 3 Ungerade Linie Textured
@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -240
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 34a10a6a6d938ae438f8c47b05da967e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: 34a10a6a6d938ae438f8c47b05da967e, type: 3}
       propertyPath: m_Name
       value: Monument_Normal
@@ -314,6 +318,38 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8143710011712545758, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -6093592463355912122, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -1806680513116206669, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -1461304994638716399, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -1120989108687609925, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -804731622281664130, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -678588488315902003, guid: 798866b752867104fb785ca56421559a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: 798866b752867104fb785ca56421559a, type: 3}
       propertyPath: m_Name
       value: Parkbank

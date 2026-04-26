@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fd1ac68ee9b1e08429153da39fe4cbf6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8ad123924b9bc4a4eac20771f83f91ed, type: 2}
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: fd1ac68ee9b1e08429153da39fe4cbf6, type: 3}
       propertyPath: m_Name
       value: Boden 1 Flat Textured
@@ -260,6 +260,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 55ba1cb0029e9df408c7f243e4188667, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 55ba1cb0029e9df408c7f243e4188667, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 55ba1cb0029e9df408c7f243e4188667, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: 55ba1cb0029e9df408c7f243e4188667, type: 3}
       propertyPath: m_Name
       value: Tree1_Normal
@@ -338,6 +350,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5196415bcfa12e1458bca07954868422, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5196415bcfa12e1458bca07954868422, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 59d9d8ddcb4c22a46b8647933e397b53, type: 2}
     - target: {fileID: 919132149155446097, guid: 5196415bcfa12e1458bca07954868422, type: 3}
       propertyPath: m_Name
       value: Tree3_Normal
