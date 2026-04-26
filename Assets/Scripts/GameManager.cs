@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool UseSaveFileSystem = false;
 
-    public int tileSelectionID;
+    public int score;
 
     private void Start()
     {
