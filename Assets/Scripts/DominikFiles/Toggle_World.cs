@@ -7,6 +7,9 @@ public class Toggle_World: MonoBehaviour
     public GameObject Light_World;
     public GameObject Shadow_World;
 
+    public GameObject Light_Background;
+    public GameObject Shadow_Background;
+
     [SerializeField] AudioClip[] darkAthmo;
     [SerializeField] AudioClip normAthmo;
 
@@ -16,6 +19,8 @@ public class Toggle_World: MonoBehaviour
     {
         aS = transform.AddComponent<AudioSource>();
         aS.playOnAwake = false;
+        aS.clip = normAthmo;
+        aS.Play();
     }
 
     public bool isWorldActive = true;
@@ -34,7 +39,10 @@ public class Toggle_World: MonoBehaviour
         Light_World.SetActive(isWorldActive);
         Shadow_World.SetActive(!isWorldActive);
 
-        if(aS.isPlaying)
+        Light_Background.SetActive(isWorldActive);
+        Shadow_Background.SetActive(!isWorldActive);
+
+        if (aS.isPlaying)
         {
             aS.Stop();
         }
