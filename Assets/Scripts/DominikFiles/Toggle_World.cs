@@ -10,6 +10,9 @@ public class Toggle_World: MonoBehaviour
     public GameObject Light_Background;
     public GameObject Shadow_Background;
 
+    public GameObject Light_Light;
+    public GameObject Shadow_Light;
+
     [SerializeField] AudioClip[] darkAthmo;
     [SerializeField] AudioClip normAthmo;
 
@@ -41,6 +44,9 @@ public class Toggle_World: MonoBehaviour
 
         Light_Background.SetActive(isWorldActive);
         Shadow_Background.SetActive(!isWorldActive);
+
+        Light_Light.SetActive(isWorldActive);
+        Shadow_Light.SetActive(!isWorldActive);
 
         if (aS.isPlaying)
         {
