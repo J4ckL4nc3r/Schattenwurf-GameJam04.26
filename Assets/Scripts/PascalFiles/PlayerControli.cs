@@ -35,8 +35,8 @@ public class PlayerControli : MonoBehaviour
     private AudioSource miaoSource;
 
     private bool grounded = false;
-    private bool airTime = false;
     private bool didJump = false;
+    private float airTime = 0;
     private int jumpsLeft = 2;
     private float maxPosX = 0;
 
@@ -57,7 +57,8 @@ public class PlayerControli : MonoBehaviour
         miaoSource.Stop();
         speed = normalSpeed;
 
-        GameManager.Instance.score = 0;
+        GameManager.Instance.movePoints = 0;
+        GameManager.Instance.bonusPoints = 0;
     }
 
     private void Update()
@@ -79,7 +80,7 @@ public class PlayerControli : MonoBehaviour
     private void UpdateAnims()
     {
         aM.SetFloat("WalkSpeed", Mathf.Abs(rB.linearVelocity.x) / 10);
-        aM.SetBool("airTime", !grounded);
+        aM.SetFloat("airTime", airTime);
         aM.SetBool("falling", rB.linearVelocity.y < 0);
         aM.SetBool("didJump", didJump);
     }
@@ -127,10 +128,11 @@ public class PlayerControli : MonoBehaviour
             grounded = true;
             jumpsLeft = maxJumps;
         }
-        airTime = false;
+
+        airTime += Time.deltaTime;
         if (Physics.Raycast(groundCheckOrigin.transform.position, Vector2.down, airTimeCheckLength, groundLayer))
         {
-            airTime = true;
+            airTime = 0;
         }
     }
 
@@ -140,7 +142,7 @@ public class PlayerControli : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             if (maxPosX - transform.position.x > maxBackwardsMovment) return;
-            if (airTime)
+            if (0.0f <= airTime)
             {
                 rB.AddForce(Vector2.left * speed * (Time.deltaTime * 100));
                 sR.flipX = true;
@@ -148,7 +150,7 @@ public class PlayerControli : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            if (airTime)
+            if (0.0f <= airTime)
             {
                 rB.AddForce(Vector2.right * speed * (Time.deltaTime * 100));
                 sR.flipX = false;
@@ -157,7 +159,7 @@ public class PlayerControli : MonoBehaviour
         if (transform.position.x > maxPosX)
         {
             maxPosX = transform.position.x;
-            GameManager.Instance.score++;
+            GameManager.Instance.movePoints = (int)transform.position.x;
         }
     }
 

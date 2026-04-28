@@ -20,7 +20,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
-        if (score != null) score.text = "" + GameManager.Instance.score;
+        if (score != null) score.text = "" + (GameManager.Instance.movePoints + GameManager.Instance.bonusPoints);
     }
 
     public void OnQuitButtonClicked()

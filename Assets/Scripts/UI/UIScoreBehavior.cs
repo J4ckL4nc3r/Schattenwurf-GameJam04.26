@@ -13,7 +13,7 @@ public class UIScoreBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
-        score.text = "Score: " + GameManager.Instance.score;
+        score.text = "Score: " + (GameManager.Instance.movePoints + GameManager.Instance.bonusPoints);
         timer.text = "Time: " + (int)StartTime;
     }
     private void Update()

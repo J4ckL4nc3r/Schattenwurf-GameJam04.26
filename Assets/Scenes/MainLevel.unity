@@ -1171,6 +1171,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a911b5d41e77b6c4f9e7cbcefc2784b2, type: 3}
     - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
+      propertyPath: airTimeCheckLength
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934449290996242947, guid: f3a4ff90fd791f341a86eedf862c94c7, type: 3}
       propertyPath: jumpForceMultiplyer
       value: 5
       objectReference: {fileID: 0}

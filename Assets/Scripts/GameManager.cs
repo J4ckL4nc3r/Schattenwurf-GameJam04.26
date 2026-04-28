@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private bool UseSaveFileSystem = false;
 
-    public int score;
+    public int movePoints;
+    public int bonusPoints;
 
     private void Start()
     {

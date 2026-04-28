@@ -24,7 +24,7 @@ public class FishyBossBosssuperking : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.score += scorePoints;
+        GameManager.Instance.bonusPoints += scorePoints;
         Destroy(gameObject);
     }
 
